@@ -21,3 +21,59 @@ Predisporre un campo di input testuale e un pulsante “aggiungi”: cliccando s
 2. cliccando sul testo dell’item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
  */
 
+const app = Vue.createApp({
+  data() {
+    return {
+      // VARIABILI:
+      // Creo un array con i dati di partenza e li stampo all'interno dell'HTML
+      todoList: [
+        {
+          id: 0,
+          text: "Fare la spesa",
+          done: false,
+        },
+        {
+          id: 1,
+          text: "Andare dal barbiere",
+          done: false,
+        },
+        {
+          id: 2,
+          text: "Andare dal dottore",
+          done: false,
+        },
+      ],
+      //Creo un oggetto universale per stampare dei nuovi item per la todolist
+      newTodoItem: {
+        text: "",
+        done: false,
+      },
+      lastId: 2,
+    }
+  },
+  methods: {
+    // EVENT CLICK
+    addTodoItem() {
+      // Creo un clone che elimina la reattività di Vue tramite spread operator
+      const newItem = {...this.newTodoItem, id: ++this.lastId}
+      // Pusho all'interno dell'array di dati il nuovo item
+      this.todoList.push(newItem)
+    },
+    // EVENT CLICK
+    todoItemDone(todoItem) {
+      // Condizione: ****
+      if (todoItem.done === true) {
+        // NON FUNZIONA
+      } else {
+        // NON FUNZIONA
+      }
+    },
+    // EVENT CLICK
+    deleteTodoItem(idItem) {
+      // Creo una variabile che mi identifica l'indice degli item della todolist
+      let indexTodoItem = this.todoList.findIndex((todoItem) => todoItem.id === idItem);
+      // Attraverso la funzione splice elimino l'item selezionato tramite il suo indice
+      this.todoList.splice(indexTodoItem, 1)
+    }
+  }
+}).mount('#app')
