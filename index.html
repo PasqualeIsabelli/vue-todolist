@@ -32,9 +32,9 @@
           <li class="list-group-item d-flex justify-content-between todo-item" v-for="todoItem in todoList">
             <div class="d-flex" @click="todoItemDone(todoItem)">
               <!--Tramite @click sull'item comparirà una line through sull'item per indicare che è stato completato-->
-              <button class="btn btn-link"><i class="fa-solid fa-check" style="color: #4c4c4d;"></i></button>
+              <button class="btn btn-link"><i class="fa-regular fa-square" style="color: #4c4c4d;"></i></button>
               <!-- <input class="form-check-input me-2 " type="checkbox"> -->
-              <!--Se la proprietà done è vera visualizzo il testo sbarrato altrimenti--> <!-- v-bind:class="(todoItem.done === true ? 'text-decoration-line-through' : '')" (NON FUNZIONA)-->
+              <!--Se la proprietà done è vera visualizzo il testo sbarrato altrimenti no--> <!-- v-bind:class="(todoItem.done === true ? 'text-decoration-line-through' : '')" (NON FUNZIONA)-->
               <div class="d-flex align-items-center">{{todoItem.text}}</div>
             </div>
             <!--Tramite @click sulla icon 'x' elimino l'iitem della todolist selezionato-->
