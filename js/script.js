@@ -61,11 +61,11 @@ const app = Vue.createApp({
     },
     // EVENT CLICK
     todoItemDone(todoItem) {
-      // Condizione: ****
+      // Condizione: Al click se il done è true allora diventerà folse altrimenti resterà true
       if (todoItem.done === true) {
-        // NON FUNZIONA
+        todoItem.done = false;
       } else {
-        // NON FUNZIONA
+        todoItem.done = true;
       }
     },
     // EVENT CLICK
